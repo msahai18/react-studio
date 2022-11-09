@@ -14,9 +14,12 @@ function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
   const [cart, setCart] = useState([]);
+  const [price, setPrice] = useState(0);
   
-  const addToCart = (itemName) => (
-    setCart([...cart, itemName]));
+  const addToCart = (itemName, itemPrice) => {
+    setCart([...cart, itemName])
+    setPrice(price + itemPrice)
+  };
  
 
   return (
@@ -30,7 +33,8 @@ function App() {
 
       <div>
         <h2>Cart</h2>
-        {cart}
+        {cart} {price}
+
         {/* TODO: render a list of items in the cart */}
       </div>
     </div>
